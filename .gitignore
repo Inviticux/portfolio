@@ -4,6 +4,7 @@
 /portfolio-app/node_modules
 /portfolio-app/.pnp
 /portfolio-app/.pnp.js
+/portfolio-app/.env
 
 # testing
 /portfolio-app/coverage
