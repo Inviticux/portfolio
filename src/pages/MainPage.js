@@ -50,7 +50,6 @@ import vscodeimg from '../assets/devicons/vscode.svg';
 
 //maincomponents
 const MainPage = () => {
-        const navigate = useNavigate();
         const contactform = useRef(null);
         const previousproj = useRef(null);
 
@@ -109,7 +108,7 @@ const MainPage = () => {
             <div className="header-root ">
                 <h1 className="header-title">Felix Pendered.</h1>
                 <div className="header-button-container">
-                    <button className="headerbutton" onClick={() => navigate('/devices')}>My Gear</button>
+                    <button className="headerbutton">My Gear</button>
                     <button className="headerbutton" onClick={() => previousproj.current?.scrollIntoView({ behavior: "smooth"})}>Previous Projects</button>
                     <button className="headerbutton" onClick={() => contactform.current?.scrollIntoView({ behavior: "smooth"})}>Get in Contact</button>
                 </div>

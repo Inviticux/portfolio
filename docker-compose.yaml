@@ -1,0 +1,9 @@
+name: portfolio-testground 
+services:
+  frontend:
+    image: nginx:latest
+    container_name: react-nginx
+    volumes:
+     - ./build:/usr/share/nginx/html:ro
+    ports:
+     - "81:80"
