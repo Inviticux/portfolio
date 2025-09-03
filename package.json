@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "mainpage": "https://inviticux.github.io/portfolio",
+  "mainpage": ".",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
