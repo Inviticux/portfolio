@@ -13,6 +13,8 @@ import pcbuild from '../assets/pcfansfull.png';
 import campingshot from '../assets/camping.png';
 import anakin from '../assets/anakin.jpg';
 import obiwan from '../assets/obiwan.jpg';
+import clayshoot from '../assets/clayshoot.jpg';
+import sup from '../assets/paddleboard.png';
 
 //import devicons
 //databases
@@ -45,11 +47,12 @@ import trelloimg from '../assets/devicons/trello.svg';
 import vscodeimg from '../assets/devicons/vscode.svg';
 
 //to sort
-
+import linkedinimg from '../assets/devicons/linkedin.svg';
 
 
 //maincomponents
 const MainPage = () => {
+        const navigate = useNavigate();
         const contactform = useRef(null);
         const previousproj = useRef(null);
 
@@ -108,7 +111,7 @@ const MainPage = () => {
             <div className="header-root ">
                 <h1 className="header-title">Felix Pendered.</h1>
                 <div className="header-button-container">
-                    <button className="headerbutton">My Gear</button>
+                    <button className="headerbutton" onClick={() => navigate('/devices')}>My Gear</button>
                     <button className="headerbutton" onClick={() => previousproj.current?.scrollIntoView({ behavior: "smooth"})}>Previous Projects</button>
                     <button className="headerbutton" onClick={() => contactform.current?.scrollIntoView({ behavior: "smooth"})}>Get in Contact</button>
                 </div>
@@ -226,7 +229,7 @@ const MainPage = () => {
                 <div className='aboutme-container'>
                     <div className='aboutme-img-container-left'>
                         <img className='aboutme-img' src={pcbuild}></img>
-                        <img className='aboutme-img' src={campingshot}></img>
+                        <img className='aboutme-img' src={obiwan}></img>
                         <img className='aboutme-img' src={anakin}></img>
                     </div>
                     <div className='aboutme-text-container'>
@@ -235,9 +238,9 @@ const MainPage = () => {
                         <p className='aboutme-text3'>Outside of that, I’ve got two cats, Obi-Wan and Anakin, who annoy me every day but I wouldn’t have it any other way. I also love camping and being outdoors – I’ve got a paddleboard and I’m part of a local scout troop where I help out with both cubs and scouts. Basically I like keeping busy, learning new stuff, and doing things that challenge me whether it’s tech, hands-on projects, or being outside.</p>
                     </div>
                     <div className='aboutme-img-container-right'>
-                        <img className='aboutme-img'></img>
-                        <img className='aboutme-img'></img>
-                        <img className='aboutme-img' src={obiwan}></img>
+                        <img className='aboutme-img' src={clayshoot}></img>
+                        <img className='aboutme-img' src={sup}></img>
+                        <img className='aboutme-img' src={campingshot}></img>
                     </div>
                 </div>
             </div>
@@ -246,16 +249,13 @@ const MainPage = () => {
 
             <div className='contact-container'>
                 <h3 className='contact-title' ref={contactform}>Contact Me!</h3>
-                    <form ref={form} onSubmit={sendEmail} className="contact-form">
-                        <input className='contact-form-name' type="text" name="user_name" placeholder="Your Name" required />
-                        <input className='contact-form-email' type="email" name="user_email" placeholder="Your Email" required />
-                        <textarea className='contact-form-message' name="message" placeholder="Your Message" required />
-                        <button className='contact-form-button' type="submit">Send</button>
-                    </form>
+                    <p className='contact-item-text'>Shoot me and email on felix.pendered@outlook.com</p>
+                    <p className='contact-item-text'>Or message me on LinkedIn</p>
+                    <img className='contact-linkedin-img' src={linkedinimg} onClick={() => window.location.replace('https://linkedin.com/in/felix-pendered-294-linkin/')}></img>
             </div>
 
             <div className='footer-root'>
-                <p className='footer-text'>Hey! its a footer</p>
+                <p className='footer-text'>Thanks for reading!</p>
             </div>
         </div>
     );

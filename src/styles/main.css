@@ -486,14 +486,8 @@
 	margin-bottom: 50px;
 }
 
-
-
-
-
-
-
-
 .contact-container {
+	visibility: hidden;
 	background-color: var(--bg-darker);
 	padding: 40px;
 	border-radius: 16px;
@@ -517,42 +511,24 @@
 	margin-top: 0px;
 }
 
-.contact-form {
-	display: flex;
-	flex-direction: column;
-	width: 300px;
-	gap: 12px;
-}
-
-.contact-form input, .contact-form textarea {
+.contact-item-text {
 	font-family: PTSans;
-	font-size: 1rem;
-	padding: 10px;
-	border-radius: 8px;
-	border: 2px solid var(--bg-lightest);
-	background: var(--bg-dark);
+	font-size: 1.2rem;
 	color: var(--text-lighter);
-	resize: vertical;
+	margin: 8px 0;
 }
 
-.contact-form input:focus, .contact-form textarea:focus {
-	outline: none;
-	border: 2px solid var(--gradient-start);
-	box-shadow: 0 0 8px var(--gradient-start);
-	background: var(--bg-darker);
-	color: var(--text-lighter);
-}
-
-.contact-form-button {
-	font-family: SCodePro;
-	background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
-	color: var(--text-lighter);
-	font-size: 1rem;
-	border-radius: 12px;
-	padding: 10px 20px;
-	border: none;
-	cursor: pointer;
+.contact-linkedin-img {
+	width: 40px;
+	height: 40px;
 	margin-top: 10px;
+	cursor: pointer;
+}
+
+.contact-linkedin-img:hover {
+	opacity: 0.7;
+	transition: opacity 0.3s;
+	box-shadow: 0 8px 32px 0 rgba(0,0,0,0.38), 0 2px 8px 0 rgba(0,0,0,0.24);
 }
 
 .footer-root {
@@ -560,9 +536,241 @@
 	background: var(--bg-darker);
 	padding: 5px;
 	text-align: left;
-	color: var(--bg-dark);
+	color: var(--text-lighter);
 	font-family: PTSans;
 	box-shadow: 0 -8px 32px 0 rgba(0,0,0,0.38), 0 -2px 8px 0 rgba(0,0,0,0.24);
 	position: relative;
 	bottom: 0;
+}
+
+/* ...existing code... */
+
+/* Mobile Styles: for screens less than 720px wide */
+@media (max-width: 719px) {
+    :root {
+        --mobile-padding: 8px;
+    }
+
+    .header-root {
+        flex-direction: column;
+        padding: var(--mobile-padding);
+    }
+
+    .header-title {
+        font-size: 2.5rem;
+        text-align: center;
+		margin-bottom: 15px;
+    }
+
+    .header-button-container {
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+		padding: 10px 0;
+    }
+
+    .headerbutton {
+		font-size: 0.9rem;
+		padding: 6px 12px;
+		width: 100%;
+		max-width: 200px;
+		height: 50px;
+		margin: 0;
+    }
+
+    .main-root {
+        padding: 0;
+    }
+
+    .root-divider {
+        width: 90%;
+        height: 2px;
+        margin-top: 40px;
+        margin-bottom: 18px;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .intro-container {
+        flex-direction: column;
+        gap: 10px;
+        width: 95%;
+    }
+
+    .intro-text-container {
+        width: 100%;
+    }
+
+    .name-title {
+        font-size: 2rem;
+		margin-top: 40px;
+    }
+
+    .name-title-role {
+        font-size: 1rem;
+        margin: -1rem 0 25px 0;
+    }
+
+    .name-title-desc {
+        font-size: 1rem;
+        width: 95%;
+        line-height: 1.2rem;
+    }
+
+    .intro-image-container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        margin-top: 30px;
+        justify-content: center;
+    }
+
+    .intro-image {
+        width: 70vw;
+        max-width: 265px;
+        height: auto;
+    }
+
+    .expedu-container {
+        width: 100%;
+    }
+
+    .expedu-item-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .expedu-item {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .expedu-item-title {
+        font-size: 1rem;
+    }
+
+    .expedu-item-desc, .expedu-item-grade {
+        font-size: 0.95rem;
+    }
+
+    .skilltech-container {
+        width: 95%;
+    }
+
+    .skilltech-button-container {
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+
+    .skilltech-button {
+        font-size: 0.75rem;
+        padding: 2px;
+    }
+
+    .skilltech-item-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+
+    .skilltech-item {
+        width: 98%;
+        height: 90px;
+        padding: 6px 0;
+    }
+
+    .skilltech-item-img {
+        width: 40%;
+        height: 40%;
+        margin-bottom: 4px;
+        margin-top: 4px;
+    }
+
+    .skilltech-item-name {
+        font-size: 0.9rem;
+    }
+
+    .projects-container {
+        width: 95%;
+    }
+
+    .projects-title-desc {
+        font-size: 1.1rem;
+        margin: -1rem 0 15px 0;
+    }
+
+    .project-item-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .project-item {
+        width: 98%;
+        padding: 8px 0px 6px 0px;
+    }
+
+    .project-item-title {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+
+    .project-item-img {
+        height: 250px;
+    }
+
+    .project-item-desc {
+        font-size: 0.95rem;
+        margin: 10px 0px 6px 10px;
+        max-width: 98%;
+    }
+
+    .aboutme-container {
+        grid-template-columns: 1fr 2fr;
+        gap: 10px;
+        margin: 12px auto;
+    }
+
+	.aboutme-img-container-left {
+		justify-content: center;
+		align-items: center;
+		height: auto;
+		width: 100%;
+		min-height: 150px;
+	}
+
+	.aboutme-img-container-right {
+		visibility: hidden;
+		display: none;
+	}
+
+    .aboutme-img {
+        max-width: 150px;
+		height: 150px;
+    }
+
+    .aboutme-text1, .aboutme-text2, .aboutme-text3 {
+        font-size: 0.75rem;
+        padding: 12px 8px;
+        line-height: 1.3rem;
+        min-height: 80px;
+    }
+
+    .aboutme-root {
+        width: 95%;
+        margin-bottom: 20px;
+    }
+
+	.contact-container {
+		visibility: visible;
+		width: 80%;
+		padding: 20px;
+		margin: 30px 0 50px 0;
+	}
+
+	.footer-text {
+		font-size: 0.75rem;
+		text-align: center;
+	}
 }

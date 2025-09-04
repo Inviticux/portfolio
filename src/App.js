@@ -5,13 +5,12 @@ import './App.css';
 
 function App() {
   return (
-    <MainPage />
-    // <HashRouter>
-    //   <Routes>
-    //     <Route path='/' element={<MainPage />} />
-    //     <Route path='/devices' element={<DevicesPage />} />
-    //   </Routes>
-    // </HashRouter>
+    <HashRouter>
+      <Routes>
+        <Route path='/' element={<MainPage />} />
+        <Route path='/devices' element={<DevicesPage />} />
+      </Routes>
+    </HashRouter>
   );
 }
 
