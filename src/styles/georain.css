@@ -1,0 +1,77 @@
+.rain-container {
+    background-color: #181a1b;
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.shape {
+    position: absolute;
+    top: 0px;
+
+    background: var(--color);
+    animation-name: drop;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* square */
+.shape.square {
+    background-color: #56CFE1;
+    border-radius: 2px;
+}
+
+/* triangle */
+.shape.triangle {
+    width: 0;
+    height: 0;
+    background: none;
+    border-left: calc(var(--triangle-size) / 2) solid transparent;
+    border-right: calc(var(--triangle-size) / 2) solid transparent;
+    border-bottom: var(--triangle-size) solid #59A6DB;
+}
+
+/* pentagon */
+.shape.pentagon {
+    background-color: #5B8AD6;
+    clip-path: polygon(
+        50% 0%,
+        95% 38%,
+        77% 91%,
+        23% 91%,
+        5% 38%
+  );
+}
+
+/* hexagon */
+.shape.hexagon {
+    background-color: #5E60CE;
+    clip-path: polygon(
+        25% 3%,
+        75% 3%,
+        100% 50%,
+        75% 97%,
+        25% 97%,
+        0% 50%
+  );
+}
+
+/* falling with fade-out */
+@keyframes drop {
+    0% {
+        transform: translateY(-60px) rotate(180deg);
+        opacity: 0.0;        /* fade-in */
+    }
+    20% {
+        opacity: 0.3;      /* full visibility */
+    }
+    80% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(110vh);
+        opacity: 0;        /* fade-out */
+    }
+}

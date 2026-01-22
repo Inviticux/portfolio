@@ -1,6 +1,7 @@
 import React, { useState , useRef } from 'react';
 import { useNavigate } from 'react-router';
 import '../styles/main.css';
+import GeometricRain from '../components/GeometricRain';
 import emailjs from "emailjs-com";
 
 // Importing images
@@ -55,6 +56,7 @@ const MainPage = () => {
         const navigate = useNavigate();
         const contactform = useRef(null);
         const previousproj = useRef(null);
+        const skillsref = useRef(null);
 
         // Skilltech items with classification
         const skilltechItems = [
@@ -107,11 +109,13 @@ const MainPage = () => {
 
     return (
         <div className="main-root">
+            <GeometricRain />
 
             <div className="header-root ">
                 <h1 className="header-title">Felix Pendered.</h1>
                 <div className="header-button-container">
-                    <button className="headerbutton" onClick={() => navigate('/devices')}>My Gear</button>
+                    <button className="headerbutton" onClick={() => navigate('/test')}>My Gear</button>
+                    <button className="headerbutton" onClick={() => skillsref.current?.scrollIntoView({ behavior: "smooth"})}>My Skills</button>
                     <button className="headerbutton" onClick={() => previousproj.current?.scrollIntoView({ behavior: "smooth"})}>Previous Projects</button>
                     <button className="headerbutton" onClick={() => contactform.current?.scrollIntoView({ behavior: "smooth"})}>Get in Contact</button>
                 </div>
@@ -130,6 +134,40 @@ const MainPage = () => {
 
             <div className='root-divider'></div>
 
+            <div className='projects-container'>
+                <h3 className='section-title' ref={previousproj}>My Previous Projects</h3>
+                <h4 className='title-desc'>Click to see the github for each</h4>
+                <div className='project-item-container'>
+
+                    <div className='project-item' onClick={() => window.location.replace('https://github.com/Inviticux/COMP3000')}>
+                        <h4 className='project-item-title'>Llamalyze</h4>
+                        <img className='project-item-img' src={llamalyze}></img>
+                        <p className='project-item-desc'>An AI Powered Quizzing Platform that allows lecturers to gauge engagement with their lectures</p>
+                    </div>
+
+                    <div className='project-item' onClick={() => window.location.replace('https://github.com/Inviticux/networksassesment')}>
+                        <h4 className='project-item-title'>Nginx Load Balancer</h4>
+                        <img className='project-item-img' src={loadbalancerimg}></img>
+                        <p className='project-item-desc'>A load balancing solution for simple php web instances using Nginx running through a single script</p>
+                    </div>
+
+                    <div className='project-item' onClick={() => window.location.replace('https://github.com/Plymouth-University/coursework-Inviticux')}>
+                        <h4 className='project-item-title'>Compass Point Hotel</h4>
+                        <img className='project-item-img' src={hotelbookingimg}></img>
+                        <p className='project-item-desc'>A simple booking system for a Hotel made as part of my university course</p>
+                    </div>
+
+                    <div className='project-item' onClick={() => window.location.replace('')}>
+                        <h4 className='project-item-title'>Video streaming Experiment</h4>
+                        <img className='project-item-img' src={streamingexp}></img>
+                        <p className='project-item-desc'>An experiment using mininet connected to an external Opendaylight Network Controller to experiment with the effects bandwidth has on video streaming</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div className='root-divider'></div>
+
             <div className='expedu-container'>
                 <h3 className='section-title'>My Education and Experience</h3>
                 <div className='expedu-item-container'>
@@ -141,6 +179,7 @@ const MainPage = () => {
                             <li>It Service Delivery</li>
                             <li>Games Development</li>
                             <li>3D Graphics</li>
+                            <li>Object Oriented Basics</li>
                         </ul>
                         <p className='expedu-item-grade'> Grade Achieved: DDD - Triple Distinction</p>
                     </div>
@@ -164,8 +203,38 @@ const MainPage = () => {
             <div className='root-divider'></div>
 
             <div className='skilltech-container'>
-                <h3 className='section-title'>Technologies and Skills</h3>
-                <div style={{ display: 'flex', gap: '12px', marginBottom: '18px', justifyContent: 'center' }}>
+                <h3 className='section-title'>Development Disciplines</h3>
+                <p className='title-desc'>How Familiar am I with each form of Development</p>
+                <div className='skilltech-progress-bars-container'>
+                    <div className='skilltech-progress-bar'>
+                        <h4 className='skilltech-progress-bar-title'>Frontend Web Development</h4>
+                        <progress className='skilltech-progress-bar-fill' value={80} max={100}></progress>
+                        <p className='progress-bar-desc'>80%</p>
+                    </div>
+                    <div className='skilltech-progress-bar'>
+                        <h4 className='skilltech-progress-bar-title'>Linux Server Deployment & Administration</h4>
+                        <progress className='skilltech-progress-bar-fill' value={65} max={100}></progress>
+                        <p className='progress-bar-desc'>65%</p>
+                    </div>
+                    <div className='skilltech-progress-bar'>
+                        <h4 className='skilltech-progress-bar-title'>CI/CD Pipelines</h4>
+                        <progress className='skilltech-progress-bar-fill' value={55} max={100}></progress>
+                        <p className='progress-bar-desc'>55%</p>
+                    </div>
+                    
+                    <div className='skilltech-progress-bar'>
+                        <h4 className='skilltech-progress-bar-title'>Backend Server Design</h4>
+                        <progress className='skilltech-progress-bar-fill' value={35} max={100}></progress>
+                        <p className='progress-bar-desc'>35%</p>
+                    </div>
+                    <div className='skilltech-progress-bar'>
+                        <h4 className='skilltech-progress-bar-title'>Cloud Architecture</h4>
+                        <progress className='skilltech-progress-bar-fill' value={25} max={100}></progress>
+                        <p className='progress-bar-desc'>25%</p>
+                    </div>
+                </div>
+                <h3 className='section-title' ref={skillsref}>Technologies and Skills</h3>
+                <div className='skilltech-button-container' style={{  }}>
                     {types.map(type => (
                         <button
                             key={type}
@@ -186,40 +255,7 @@ const MainPage = () => {
                             </div>
                         ))}
                 </div>
-            </div>
-
-            <div className='root-divider'></div>
-
-            <div className='projects-container'>
-                <h3 className='section-title' ref={previousproj}>My Previous Projects</h3>
-                <h4 className='projects-title-desc'>Click to see more about each one</h4>
-                <div className='project-item-container'>
-
-                    <div className='project-item' onClick={() => window.location.replace('https://github.com/Inviticux/COMP3000')}>
-                        <h4 className='project-item-title'>Llamalyze</h4>
-                        <img className='project-item-img' src={llamalyze}></img>
-                        <p className='project-item-desc'>An AI Powered Quizzing Platform that allows lecturers to gauge engagement with their lectures</p>
-                    </div>
-
-                    <div className='project-item' onClick={() => window.location.replace('https://github.com/Inviticux/networksassesment')}>
-                        <h4 className='project-item-title'>Nginx Load Balancer</h4>
-                        <img className='project-item-img' src={loadbalancerimg}></img>
-                        <p className='project-item-desc'>A load balancing solution for simple php web instances using Nginx</p>
-                    </div>
-
-                    <div className='project-item' onClick={() => window.location.replace('https://github.com/Plymouth-University/coursework-Inviticux')}>
-                        <h4 className='project-item-title'>Compass Point Hotel</h4>
-                        <img className='project-item-img' src={hotelbookingimg}></img>
-                        <p className='project-item-desc'>A simple booking system for a Hotel</p>
-                    </div>
-
-                    <div className='project-item' onClick={() => window.location.replace('')}>
-                        <h4 className='project-item-title'>Video streaming Experiment</h4>
-                        <img className='project-item-img' src={streamingexp}></img>
-                        <p className='project-item-desc'>I used mininet connected to an external Opendaylight Network Controller to experiment with the effects bandwidth has on video streaming</p>
-                    </div>
-
-                </div>
+                
             </div>
 
             <div className='root-divider'></div>
@@ -252,10 +288,6 @@ const MainPage = () => {
                     <p className='contact-item-text'>Shoot me and email on felix.pendered@outlook.com</p>
                     <p className='contact-item-text'>Or message me on LinkedIn</p>
                     <img className='contact-linkedin-img' src={linkedinimg} onClick={() => window.location.replace('https://linkedin.com/in/felix-pendered-294-linkin/')}></img>
-            </div>
-
-            <div className='footer-root'>
-                <p className='footer-text'>Thanks for reading!</p>
             </div>
         </div>
     );

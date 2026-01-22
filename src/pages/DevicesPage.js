@@ -7,8 +7,26 @@ const DevicesPage = () => {
 
     return (
         <div className='devices-root'>
-            <button onClick={() => navigate('/')}>Back</button>
-            <p>devices</p>
+
+            <div className="header-root ">
+                <h1 className="header-title">Felix Pendered.</h1>
+                <div className="header-button-container">
+                    <button className="headerbutton" onClick={() => navigate('/')}>Return</button>
+                </div>
+            </div>
+
+            <div className='devices-content'>
+                
+                <div className='devices-computer-section'>
+                </div>
+
+                <div className='devices-homelab-section'>
+                </div>
+
+                <div className='devices-gaming-section'>
+                </div>
+
+            </div>
         </div>
     );
 };

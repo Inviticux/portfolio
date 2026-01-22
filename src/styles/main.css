@@ -57,6 +57,8 @@
 
 .header-button-container {
 	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	gap: 16px;
 }
 
@@ -83,7 +85,6 @@
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
-	background: var(--bg-dark);
 	min-height: 100vh;
 	overflow-x: hidden;
 }
@@ -208,10 +209,12 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	transition: all 0.3s ease;
 }
 
 .expedu-item:hover {
 	background: var(--bg-dark);
+	transform: scale(1.105);
 }
 
 .expedu-item-skills {
@@ -287,12 +290,13 @@
 }
 
 .skilltech-button-container {
-	width: 100%;
 	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-bottom: 18px;
 	justify-content: center;
+	width: 100%;
 	align-items: center;
-	gap: 16px;
-	margin-bottom: 20px;
 }
 
 .skilltech-button {
@@ -301,17 +305,20 @@
 	box-shadow: 0 8px 32px 0 rgba(0,0,0,0.38), 0 2px 8px 0 rgba(0,0,0,0.24);
 	color: var(--text-light);
 	font-size: 1rem;
+	min-height: 45px;
 	border-radius: 12px;
 	padding: 10px 20px;
 	border: 2px solid;
 	border-color: var(--bg-darker);
 	cursor: pointer;
 	margin: 5px 0px 25px;
+	transition: all 0.3s ease;
 }
 
 .skilltech-button:hover {
 	color: var(--text-lighter);
 	background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+	transform: scale(1.105);
 }
 
 .skilltech-item-container {
@@ -333,6 +340,13 @@
 	width: 80%;
 	padding: 12px 0;
 	height: 150px;
+	transition: all 0.3s ease;
+}
+
+.skilltech-item:hover {
+	cursor: pointer;
+	background: var(--bg-dark);
+	transform: scale(1.105);
 }
 
 .skilltech-item-img {
@@ -354,6 +368,72 @@
 	align-self: center;
 }
 
+.skilltech-progress-bars-container {
+	width: 95%;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-items: center;
+	margin-bottom: 60px;
+}
+
+.skilltech-progress-bar {
+	width: 90%;
+	box-shadow: 0 8px 32px 0 rgba(0,0,0,0.38), 0 2px 8px 0 rgba(0,0,0,0.24);
+	background: var(--bg-darker);
+	border-radius: 10px;
+	margin: 8px 0 20px 0;
+	padding: 16px;
+	overflow: hidden;
+	transition: all 0.3s ease;
+}
+
+.progress-bar-desc {
+	font-family: PTSans;
+	font-size: 1rem;
+	color: var(--text-lighter);
+	margin: 10px 0 0 0;
+	text-align: center;
+}
+
+.skilltech-progress-bar:hover {
+	cursor: pointer;
+	background: var(--bg-dark);
+	transform: scale(1.05);
+}
+
+.skilltech-progress-bar-title {
+	font-family: SCodePro;
+	font-size: 1.25rem;
+	color: var(--text-light);
+	margin: 8px 16px;
+	text-align: center;
+}
+
+.skilltech-progress-bar-fill {
+    width: 100%;
+    height: 12px;
+    border-radius: 8px;
+    background-color: var(--bg-lightest); 
+	box-shadow: 0 8px 32px 0 rgba(0,0,0,0.38), 0 2px 8px 0 rgba(0,0,0,0.24);
+    overflow: hidden;
+    position: relative;
+}
+
+.skilltech-progress-bar-fill::-webkit-progress-bar {
+    background-color: var(--bg-lightest); 
+    border-radius: 8px;
+}
+
+.skilltech-progress-bar-fill::-webkit-progress-value {
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    border-radius: 8px;
+}
+
+.skilltech-progress-bar-fill::-moz-progress-bar {
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    border-radius: 8px;
+}
+
 .projects-container {
 	width: 95%;
 	display: flex;
@@ -361,11 +441,12 @@
 	align-items: center;
 }
 
-.projects-title-desc {
+.title-desc {
+	color: var(--text-lighter);
 	font-family: SCodePro;
     font-size: 1.5rem;
     font-weight: normal;
-    margin: -1.5rem 0 30px 0;
+    margin: -12px 0 30px 0;
     text-align: center;
 }
 
@@ -388,6 +469,7 @@
 	flex-direction: column;
 	align-items: center;
 	position: relative;
+	transition: all 0.3s ease;
 }
 
 .project-item-title {
@@ -427,6 +509,7 @@
 .project-item:hover {
 	cursor: pointer;
 	background: var(--bg-dark);
+	transform: scale(1.105);
 }
 
 /* About Me Section Styles */
@@ -452,7 +535,7 @@
 	width: 320px;
 	height: 320px;
 	object-fit: cover;
-	border-radius: 16px;
+	border-radius: 24px;
 	box-shadow: 0 4px 16px 0 rgba(0,0,0,0.18);
 	display: block;
 	padding-bottom: 15px;
@@ -460,6 +543,11 @@
 	margin-right: auto;
 	margin-top: auto;
 	margin-bottom: auto;
+	transition: all 0.3s ease;
+}
+
+.aboutme-img:hover {
+	transform: scale(1.105);
 }
 
 .aboutme-text1, .aboutme-text2, .aboutme-text3 {
@@ -487,7 +575,6 @@
 }
 
 .contact-container {
-	visibility: hidden;
 	background-color: var(--bg-darker);
 	padding: 40px;
 	border-radius: 16px;
@@ -543,10 +630,12 @@
 	bottom: 0;
 }
 
-/* ...existing code... */
-
-/* Mobile Styles: for screens less than 720px wide */
-@media (max-width: 719px) {
+.footer-text {
+	font-size: 1rem;
+	margin: 0;
+	padding: 8px 16px;
+}
+@media (max-width: 1150px) {
     :root {
         --mobile-padding: 8px;
     }
@@ -644,7 +733,7 @@
     }
 
     .expedu-item {
-        width: 90%;
+        width: 75%;
         padding: 15px;
     }
 
@@ -661,6 +750,7 @@
     }
 
     .skilltech-button-container {
+		grid-template-columns: repeat(4, 3fr);
         gap: 8px;
         margin-bottom: 10px;
     }
@@ -707,7 +797,7 @@
     }
 
     .project-item {
-        width: 98%;
+        width: 90%;
         padding: 8px 0px 6px 0px;
     }
 
@@ -772,5 +862,10 @@
 	.footer-text {
 		font-size: 0.75rem;
 		text-align: center;
+	}
+
+	.skilltech-progress-bars-container {
+		grid-template-columns: 1fr;
+
 	}
 }
