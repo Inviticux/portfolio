@@ -2,7 +2,6 @@
     background-color: #181a1b;
     position: fixed;
     inset: 0;
-    overflow: hidden;
     pointer-events: none;
     z-index: -1;
 }

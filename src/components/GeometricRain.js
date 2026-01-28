@@ -1,13 +1,13 @@
 import "../styles/georain.css";
 
 export default function GeometricRain({
-  count = 140,
+  count = 60,
   colours = ["#ffffff", "#aee2ff", "#ffc8dd", "#caffbf"],
   shapes = ["square", "triangle", "pentagon", "hexagon"]
 }) {
   const items = Array.from({ length: count }).map(() => {
     const type = shapes[Math.floor(Math.random() * shapes.length)];
-    const size = Math.random() * 14 + 8;
+    const size = Math.random() * 40 + 8;
     const color = colours[Math.floor(Math.random() * colours.length)];
 
     return {

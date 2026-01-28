@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
+import GeometricRain from '../components/GeometricRain';
 import '../styles/devices.css';
 
 const DevicesPage = () => {
@@ -7,26 +8,27 @@ const DevicesPage = () => {
 
     return (
         <div className='devices-root'>
+            <GeometricRain />
 
-            <div className="header-root ">
-                <h1 className="header-title">Felix Pendered.</h1>
+            <header className="header-root">
+                <h1 className="header-title" onClick={() => navigate('/')}>Felix Pendered.</h1>
                 <div className="header-button-container">
                     <button className="headerbutton" onClick={() => navigate('/')}>Return</button>
                 </div>
-            </div>
+            </header>
 
-            <div className='devices-content'>
-                
-                <div className='devices-computer-section'>
-                </div>
+            <main className='devices-content'>
+                <h2 className='section-title'>My Devices and Setup</h2>
+                <section className='devices-computer-section'>
+                </section>
+                <h2 className='section-title'>My Homelab and Gaming Setup</h2>
+                <section className='devices-homelab-section'>
+                </section>
+                <h2 className='section-title'>My Gaming Setup</h2>
+                <section className='devices-gaming-section'>
+                </section>
 
-                <div className='devices-homelab-section'>
-                </div>
-
-                <div className='devices-gaming-section'>
-                </div>
-
-            </div>
+            </main>
         </div>
     );
 };

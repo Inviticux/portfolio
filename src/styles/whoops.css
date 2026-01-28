@@ -1,0 +1,94 @@
+:root {
+	--bg-dark: #181a1b;
+	--bg-darker: #232526;
+	--bg-lightest: #3C3E3F;
+	--text-light: #eaeaea;
+	--text-lighter: #f5f5f5;
+	--chamoisee: #b08968ff;
+	--raw-umber: #9c6644ff;
+	--gradient-start: #5e60ce;
+	--gradient-end: #56cfe1;
+}
+
+@font-face {
+	font-family: Inconsolata;
+	src: url(../assets/Inconsolata.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: Trocci;
+	src: url(../assets/Trocchi-Regular.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: PTSans;
+	src: url(../assets/PTSans-Regular.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: SCodePro;
+	src: url(../assets/SourceCodePro-Regular.ttf) format('truetype');
+}
+
+.whoops-root {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+.whoops-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    flex-grow: 1;
+}
+
+.whoops-title {
+	font-family: SCodePro;
+	font-size: 6.2rem;
+	font-weight: bold;
+	text-align: center;
+	background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	color: transparent;
+	margin-bottom: 0px;
+}
+
+.whoops-text {
+    font-family: inconsolata;
+    font-size: 1.8rem;
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 15px;
+    max-width: 600px;
+}
+
+.whoops-button {
+	font-family: SCodePro;
+	background: var(--bg-darker);
+	box-shadow: 0 8px 32px 0 rgba(0,0,0,0.38), 0 2px 8px 0 rgba(0,0,0,0.24);
+	color: var(--text-light);
+	font-size: 1rem;
+	min-height: 45px;
+	border-radius: 12px;
+	padding: 10px 20px;
+	border: 2px solid;
+	border-color: var(--bg-darker);
+	cursor: pointer;
+	margin: 25px 0px 25px;
+	transition: all 0.3s ease;
+}
+
+.whoops-button:hover {
+	color: var(--text-lighter);
+	background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+	transform: scale(1.105);
+}
